@@ -19,6 +19,7 @@ from src.evaluation.evaluate import candidate_metrics, candidate_miss_rate, make
 from src.features.feature_extractor import FEATURE_COLUMNS
 from src.models.feature_selection import FeatureSelector
 from src.models.models import MODEL_NAMES, CandidateClassifier, build_model
+from src.optimization.bayesian_optimizer import run as run_bayesian_optimization
 
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = ROOT / "experiments/configs/phase1_config.json"
@@ -300,6 +301,12 @@ def run() -> None:
     }
     (ARTIFACT_DIR / "metadata.json").write_text(json.dumps(metadata, indent=2))
 
+    logger("bayesian optimisation started for primary model")
+    run_bayesian_optimization()
+    metadata = json.loads((ARTIFACT_DIR / "metadata.json").read_text())
+    best_name = metadata["selected_model"]
+    logger(f"bayesian optimisation complete; primary model: {best_name}")
+
     reloaded = CandidateClassifier.load(artifact_path)
     reload_probabilities = reloaded.predict_proba(_clean_features(test.features).head(100))
     reload_check = {
@@ -335,9 +342,16 @@ def run() -> None:
     fig.savefig(FIGURE_DIR / "timing_comparison.png", dpi=150)
     plt.close(fig)
 
+    bayesian_summary = json.loads((RESULTS_DIR / "bayesian_optimization_summary.json").read_text())
     summary = {
         "status": "completed",
         "selected_model": best_name,
+        "bayesian_optimization": {
+            "status": bayesian_summary["status"],
+            "n_trials": bayesian_summary["n_trials"],
+            "best_params": bayesian_summary["best_params"],
+            "best_cv_macro_f1": bayesian_summary["best_cv_macro_f1"],
+        },
         "n_train_trips": int(train.features["trip_id"].nunique()),
         "n_test_trips": int(test.features["trip_id"].nunique()),
         "n_train_rows": int(len(train.features)),

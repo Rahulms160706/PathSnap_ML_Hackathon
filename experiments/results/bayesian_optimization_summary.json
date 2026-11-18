@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "n_trials": 20,
+  "best_params": {
+    "learning_rate": 0.05289579939895078,
+    "max_leaf_nodes": 41,
+    "min_samples_leaf": 26,
+    "l2_regularization": 0.25875066728865553,
+    "max_iter": 126,
+    "early_stopping": false
+  },
+  "best_cv_macro_f1": 0.8696350130747474,
+  "tuned_test": {
+    "model": "hist_gradient_boosting",
+    "variant": "bayesian_tuned",
+    "cv_macro_f1": 0.8696350130747474,
+    "test_macro_f1": 0.8283787196621102,
+    "test_observation_top1_accuracy": 0.6418580375782881,
+    "test_log_loss": 0.18108275420483425,
+    "test_accuracy": 0.9277734171550972,
+    "test_precision": 0.6576024068502662,
+    "test_recall": 0.7431672551327317,
+    "train_seconds": 4.800577099998918,
+    "inference_seconds": 0.392564088000654
+  },
+  "reload_check": {
+    "reloaded_model": "hist_gradient_boosting_bayesian_tuned",
+    "prediction_shape": [
+      100
+    ],
+    "probability_min": 0.0013274747804811475,
+    "probability_max": 0.9252118463966926,
+    "all_in_unit_interval": true
+  }
+}
