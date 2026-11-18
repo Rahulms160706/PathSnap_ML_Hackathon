@@ -221,3 +221,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# PathSnap local environment
+.env
+.venv/
+
+# VS Code
+.vscode/
+
+# Generated experiment temporary files
+experiments/tmp/
+
+# Generated model files
+artifacts/model/
