@@ -34,12 +34,12 @@ class CandidateClassifier:
             x = self.selector.fit_transform(features, y)
         else:
             x = features.copy()
-        self.estimator.fit(x.to_numpy(), y)
+        self.estimator.fit(x, y)
         return self
 
     def predict_proba(self, features: pd.DataFrame) -> np.ndarray:
         x = self._prepare(features)
-        probabilities = self.estimator.predict_proba(x.to_numpy())
+        probabilities = self.estimator.predict_proba(self._estimator_input(x))
         positive_index = np.where(self.estimator.classes_ == POSITIVE_LABEL)[0]
         if len(positive_index) != 1:
             raise RuntimeError("Binary positive class is unavailable")
@@ -55,6 +55,12 @@ class CandidateClassifier:
         if self.selector is not None:
             return self.selector.transform(features.loc[:, self.feature_columns_])
         return features.loc[:, self.feature_columns_].copy()
+
+    def _estimator_input(self, features: pd.DataFrame) -> pd.DataFrame | np.ndarray:
+        names = getattr(self.estimator, "feature_names_in_", None)
+        if names is None or not set(map(str, names)).issubset(features.columns):
+            return features.to_numpy()
+        return features.loc[:, list(names)]
 
     def predict_candidates(self, features: pd.DataFrame) -> pd.DataFrame:
         identifier_columns = [column for column in ("trip_id", "observation_id", "candidate_arc_id", "candidate_rank") if column in features.columns]
