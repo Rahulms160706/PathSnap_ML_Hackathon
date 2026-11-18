@@ -1,0 +1,42 @@
+10:50:18 phase 1 pipeline started
+10:51:02 training features: (404178, 25)
+10:51:13 student-test features: (136321, 25)
+10:51:37 fold 1: selected 12 features
+10:51:38   logistic_regression: macro_f1=0.7645 time=0.95s
+10:54:03   random_forest: macro_f1=0.8801 time=142.88s
+10:54:36   extra_trees: macro_f1=0.8681 time=30.44s
+10:54:38   hist_gradient_boosting: macro_f1=0.8790 time=1.76s
+10:55:21   knn: macro_f1=0.8650 time=0.81s
+10:55:30 fold 2: selected 12 features
+10:55:31   logistic_regression: macro_f1=0.7756 time=1.05s
+10:57:57   random_forest: macro_f1=0.8917 time=143.94s
+10:58:32   extra_trees: macro_f1=0.8810 time=32.43s
+10:58:34   hist_gradient_boosting: macro_f1=0.8918 time=2.00s
+10:59:02   knn: macro_f1=0.8810 time=0.86s
+10:59:12 fold 3: selected 12 features
+10:59:13   logistic_regression: macro_f1=0.7712 time=0.87s
+11:01:44   random_forest: macro_f1=0.8720 time=149.54s
+11:02:17   extra_trees: macro_f1=0.8681 time=31.21s
+11:02:19   hist_gradient_boosting: macro_f1=0.8695 time=1.83s
+11:02:47   knn: macro_f1=0.8635 time=0.83s
+11:02:56 fold 4: selected 12 features
+11:02:57   logistic_regression: macro_f1=0.7493 time=0.93s
+11:05:25   random_forest: macro_f1=0.8596 time=146.80s
+11:06:01   extra_trees: macro_f1=0.8470 time=33.75s
+11:06:04   hist_gradient_boosting: macro_f1=0.8586 time=1.96s
+11:06:31   knn: macro_f1=0.8455 time=0.89s
+11:06:40 fold 5: selected 12 features
+11:06:41   logistic_regression: macro_f1=0.7684 time=1.18s
+11:09:03   random_forest: macro_f1=0.8557 time=141.00s
+11:09:40   extra_trees: macro_f1=0.8496 time=33.88s
+11:09:42   hist_gradient_boosting: macro_f1=0.8519 time=1.83s
+11:10:09   knn: macro_f1=0.8430 time=0.82s
+11:10:17 initial-feature ablation complete for logistic_regression
+11:13:50 initial-feature ablation complete for extra_trees
+11:13:59 final selected features: ['candidate_rank', 'segment_heading_diff_rad', 'projection_ratio', 'candidate_distance_m', 'distance_length_ratio', 'transition_distance_m', 'min_heading_diff_rad', 'transition_ratio', 'gps_speed_mps', 'endpoint_degree_sum', 'gps_heading_sin', 'gps_heading_cos']
+11:14:01 student logistic_regression: top1=0.6280 macro_f1=0.7285
+11:17:20 student random_forest: top1=0.6417 macro_f1=0.8267
+11:18:09 student extra_trees: top1=0.6368 macro_f1=0.8175
+11:18:12 student hist_gradient_boosting: top1=0.6416 macro_f1=0.8290
+11:21:08 student knn: top1=0.6315 macro_f1=0.8198
+11:21:10 reload verification: {'reloaded_model': 'hist_gradient_boosting', 'prediction_shape': [100], 'probability_min': 0.0008077493654711325, 'probability_max': 0.9220103322131996, 'all_in_unit_interval': True}
