@@ -1,0 +1,1 @@
+"""PathSnap package source modules."""

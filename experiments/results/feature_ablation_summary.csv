@@ -1,0 +1,3 @@
+model,feature_set,candidate_macro_f1,log_loss
+extra_trees,initial,0.8646366479323735,0.17349225196709273
+logistic_regression,initial,0.7654325615672624,0.3088682495396284

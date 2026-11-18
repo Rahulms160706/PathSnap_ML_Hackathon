@@ -1,0 +1,118 @@
+{
+  "selected_features": [
+    "candidate_rank",
+    "segment_heading_diff_rad",
+    "projection_ratio",
+    "candidate_distance_m",
+    "distance_length_ratio",
+    "transition_distance_m",
+    "min_heading_diff_rad",
+    "transition_ratio",
+    "gps_speed_mps",
+    "endpoint_degree_sum",
+    "gps_heading_sin",
+    "gps_heading_cos"
+  ],
+  "dropped_features": {
+    "constant": [],
+    "correlated": [
+      "reverse_heading_diff_rad"
+    ],
+    "importance": [
+      "candidate_pool_size",
+      "segment_length_m",
+      "previous_gps_distance_m",
+      "dt_s",
+      "gap_flag"
+    ]
+  },
+  "importances": {
+    "candidate_distance_m": {
+      "tree_importance": 0.07037939057965738,
+      "permutation_importance": 0.07601564333536265,
+      "combined_rank": 4.0
+    },
+    "candidate_rank": {
+      "tree_importance": 0.3831169712747663,
+      "permutation_importance": 0.5124032960411516,
+      "combined_rank": 1.0
+    },
+    "candidate_pool_size": {
+      "tree_importance": 0.010372233172376052,
+      "permutation_importance": 0.01164023838265188,
+      "combined_rank": 14.5
+    },
+    "projection_ratio": {
+      "tree_importance": 0.10410718641337535,
+      "permutation_importance": 0.09687421382642536,
+      "combined_rank": 3.0
+    },
+    "distance_length_ratio": {
+      "tree_importance": 0.04082948740436722,
+      "permutation_importance": 0.03263254489493994,
+      "combined_rank": 5.5
+    },
+    "segment_length_m": {
+      "tree_importance": 0.015097124102350087,
+      "permutation_importance": 0.010854651451448594,
+      "combined_rank": 13.0
+    },
+    "gps_speed_mps": {
+      "tree_importance": 0.01644527270842591,
+      "permutation_importance": 0.020032281239067307,
+      "combined_rank": 9.5
+    },
+    "gps_heading_sin": {
+      "tree_importance": 0.010638028013986637,
+      "permutation_importance": 0.017870265498459825,
+      "combined_rank": 12.0
+    },
+    "gps_heading_cos": {
+      "tree_importance": 0.011044370213721715,
+      "permutation_importance": 0.016701323726930006,
+      "combined_rank": 12.0
+    },
+    "segment_heading_diff_rad": {
+      "tree_importance": 0.2278547970389861,
+      "permutation_importance": 0.37252527015503223,
+      "combined_rank": 2.0
+    },
+    "min_heading_diff_rad": {
+      "tree_importance": 0.0329780311187589,
+      "permutation_importance": 0.028806216004076235,
+      "combined_rank": 6.5
+    },
+    "previous_gps_distance_m": {
+      "tree_importance": 0.014224182104308657,
+      "permutation_importance": 0.016002800953124396,
+      "combined_rank": 12.0
+    },
+    "transition_distance_m": {
+      "tree_importance": 0.02660118481466925,
+      "permutation_importance": 0.03601035211286996,
+      "combined_rank": 6.0
+    },
+    "transition_ratio": {
+      "tree_importance": 0.017914260923148673,
+      "permutation_importance": 0.023497430557714194,
+      "combined_rank": 8.0
+    },
+    "endpoint_degree_sum": {
+      "tree_importance": 0.017478125404497256,
+      "permutation_importance": 0.015460361874780282,
+      "combined_rank": 11.0
+    },
+    "dt_s": {
+      "tree_importance": 0.000792063261632601,
+      "permutation_importance": 0.0001192253131410137,
+      "combined_rank": 16.5
+    },
+    "gap_flag": {
+      "tree_importance": 0.00012729145097208463,
+      "permutation_importance": 0.00013191786684141338,
+      "combined_rank": 16.5
+    }
+  },
+  "initial_feature_count": 18,
+  "selected_feature_count": 12
+}

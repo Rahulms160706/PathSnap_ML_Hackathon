@@ -1,0 +1,13 @@
+feature
+candidate_rank
+segment_heading_diff_rad
+projection_ratio
+candidate_distance_m
+distance_length_ratio
+transition_distance_m
+min_heading_diff_rad
+transition_ratio
+gps_speed_mps
+endpoint_degree_sum
+gps_heading_sin
+gps_heading_cos
