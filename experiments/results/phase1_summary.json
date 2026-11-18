@@ -1,6 +1,6 @@
 {
   "status": "completed",
-  "selected_model": "hist_gradient_boosting",
+  "selected_model": "hist_gradient_boosting_bayesian_tuned",
   "n_train_trips": 80,
   "n_test_trips": 10,
   "n_train_rows": 404178,
@@ -156,5 +156,19 @@
     "probability_min": 0.0008077493654711325,
     "probability_max": 0.9220103322131996,
     "all_in_unit_interval": true
+  },
+  "bayesian_optimization": {
+    "status": "completed",
+    "n_trials": 20,
+    "best_params": {
+      "learning_rate": 0.05289579939895078,
+      "max_leaf_nodes": 41,
+      "min_samples_leaf": 26,
+      "l2_regularization": 0.25875066728865553,
+      "max_iter": 126,
+      "early_stopping": false
+    },
+    "best_cv_macro_f1": 0.8696350130747474,
+    "primary_model_promoted": true
   }
 }

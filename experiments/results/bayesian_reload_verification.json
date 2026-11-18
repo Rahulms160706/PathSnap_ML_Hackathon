@@ -1,0 +1,9 @@
+{
+  "reloaded_model": "hist_gradient_boosting_bayesian_tuned",
+  "prediction_shape": [
+    100
+  ],
+  "probability_min": 0.0013274747804811475,
+  "probability_max": 0.9252118463966926,
+  "all_in_unit_interval": true
+}
